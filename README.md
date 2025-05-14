@@ -1,9 +1,7 @@
-WhatsApp Analyzer — a Django web application that helps you analyze your WhatsApp chat data. Gain insights into your messaging habits, visualize your activity, and discover trends. Simply upload your exported chat file and let the analysis begin!
-<br>
-Tech Stack Used 
-<br>
-PYTHON AND PYTHON LIBRARIES
-<br>
-NLP LIBRARIES
-<br>
-DJANGO FRAMEWORK
+WHATSAPP-CHAT-ANALYZER
+**WhatsApp Analyzer** is a Django-based web application that helps you understand your WhatsApp chat data better.  
+Simply upload your exported `.txt` file and explore interactive insights about your messaging behavior.
+Tech Stack Used
+- PYTHON AND PYTHON LIBRARIES
+- NLP LIBRARIES
+- DJANGO FRAMEWORK
