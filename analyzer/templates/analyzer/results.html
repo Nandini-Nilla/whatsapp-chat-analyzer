@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Results</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            color: #ffd700; /* Gold color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-top: 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-top: 40px;
+            border-bottom: 3px solid #ffd700; /* Gold color */
+            padding-bottom: 10px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-top: 30px;
+            animation: slideInRight 1s ease-in-out;
+        }
+
+        .statistics {
+            background: rgba(255, 215, 0, 0.1); /* Semi-transparent gold */
+            padding: 30px;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 900px;
+            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3); /* Gold shadow */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .statistics p {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: #fff;
+        }
+
+        .section {
+            background: rgba(255, 215, 0, 0.1); /* Semi-transparent gold */
+            padding: 30px;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3); /* Gold shadow */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .plot-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 30px;
+            background: rgba(255, 215, 0, 0.1); /* Semi-transparent gold */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3); /* Gold shadow */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3); /* Gold shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.5); /* Brighter gold shadow */
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Button Styles */
+        .back-button {
+            display: inline-block;
+            margin: 40px auto;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #000; /* Black text */
+            background: #ffd700; /* Gold background */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3); /* Gold shadow */
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .back-button:hover {
+            background: #ffc107; /* Brighter gold on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.5); /* Brighter gold shadow */
+        }
+
+        .back-button:active {
+            transform: translateY(0);
+        }
+
+        /* Background Animation */
+        @keyframes moveBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            animation: moveBackground 10s ease infinite;
+            background-size: 200% 200%;
+        }
+    </style>
+</head>
+<body>
+    <h1>WhatsApp Chat Analysis</h1>
+
+    <!-- Top Statistics -->
+    <div class="statistics">
+        <h2>Top Statistics</h2>
+        <p>Total Messages: {{ num_messages }}</p>
+        <p>Total Words: {{ num_words }}</p>
+        <p>Media Shared: {{ num_media_messages }}</p>
+        <p>Links Shared: {{ num_links }}</p>
+    </div>
+
+    <!-- Monthly Timeline -->
+    <div class="section">
+        <h2>Monthly Timeline</h2>
+        <div class="plot-container">
+            <img src="data:image/png;base64,{{ monthly_timeline_plot }}" alt="Monthly Timeline">
+        </div>
+    </div>
+
+    <!-- Daily Timeline -->
+    <div class="section">
+        <h2>Daily Timeline</h2>
+        <div class="plot-container">
+            <img src="data:image/png;base64,{{ daily_timeline_plot }}" alt="Daily Timeline">
+        </div>
+    </div>
+
+    <!-- Activity Map -->
+    <div class="section">
+        <h2>Activity Map</h2>
+        <div>
+            <h3>Most Busy Day</h3>
+            <div class="plot-container">
+                <img src="data:image/png;base64,{{ busy_day_plot }}" alt="Busy Day">
+            </div>
+        </div>
+        <div>
+            <h3>Most Busy Month</h3>
+            <div class="plot-container">
+                <img src="data:image/png;base64,{{ busy_month_plot }}" alt="Busy Month">
+            </div>
+        </div>
+    </div>
+
+    <!-- Weekly Activity Heatmap -->
+    <div class="section">
+        <h2>Weekly Activity Heatmap</h2>
+        <div class="plot-container">
+            <img src="data:image/png;base64,{{ heatmap_plot }}" alt="Heatmap">
+        </div>
+    </div>
+
+    <!-- WordCloud -->
+    <div class="section">
+        <h2>WordCloud</h2>
+        <div class="plot-container">
+            <img src="data:image/png;base64,{{ wordcloud_plot }}" alt="WordCloud">
+        </div>
+    </div>
+
+    <!-- Most Common Words -->
+    <div class="section">
+        <h2>Most Common Words</h2>
+        <div class="plot-container">
+            <img src="data:image/png;base64,{{ common_words_plot }}" alt="Common Words">
+        </div>
+    </div>
+
+    <!-- Emoji Analysis -->
+    <div class="section">
+        <h2>Emoji Analysis</h2>
+        {% if emoji_plot %}
+            <div class="plot-container">
+                <img src="data:image/png;base64,{{ emoji_plot }}" alt="Emoji Analysis">
+            </div>
+        {% else %}
+            <p>No emojis found in the chat data.</p>
+        {% endif %}
+    </div>
+
+    <!-- Back Button -->
+    <a href="/upload" class="back-button">Upload Another Chat</a>
+</body>
+</html>

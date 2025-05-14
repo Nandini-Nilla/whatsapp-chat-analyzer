@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Analyzer - Introduction</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', 'Segoe UI', 'Arial', sans-serif; /* Modern font stack */
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media.gettyimages.com/id/1469875556/video/4k-abstract-lines-background-loopable.jpg?s=640x640&k=20&c=oRhmLOFm1rQPZQSQrUqnd8eRd8LsoGLmiQS7nMIh-MU='), linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #fff;
+            line-height: 1.8; /* Improved line height */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            color: #ff6f61; /* Neon coral */
+            font-size: 2.5rem;
+            font-weight: 600; /* Semi-bold for better visibility */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            flex: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            color: #ffdd57; /* Pastel yellow */
+            text-align: center;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+            font-size: 2.5rem;
+            font-weight: 600; /* Semi-bold */
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #ff6f61; /* Neon coral */
+            font-size: 2rem;
+            font-weight: 600; /* Semi-bold */
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem; /* Slightly larger for readability */
+            line-height: 1.8; /* Improved line height */
+            margin-bottom: 30px;
+            animation: fadeIn 2.5s ease-in-out;
+            font-weight: 400; /* Regular weight */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            font-weight: 500; /* Medium weight */
+            color: #fff;
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to blue gradient */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+            animation: bounce 2s infinite;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+        }
+
+        .developer-info {
+            margin-top: 40px;
+            font-size: 1rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .developer-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffdd57; /* Pastel yellow */
+        }
+
+        .developer-info p {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            font-weight: 400; /* Regular weight */
+        }
+
+        .developer-info a {
+            color: #00bcd4; /* Neon teal */
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500; /* Medium weight */
+        }
+
+        .developer-info a:hover {
+            color: #ff6f61; /* Neon coral */
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
+            color: #ff6f61; /* Neon coral */
+            font-size: 1rem;
+            margin-top: auto;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        WhatsApp Analyzer
+    </header>
+
+    <div class="container">
+        <h1>Welcome to WhatsApp Analyzer</h1>
+        <p>
+            This tool helps you analyze your WhatsApp chat data. Gain insights into your messaging habits, 
+            visualize your activity, and discover trends. Simply upload your chat file and let the magic happen!
+        </p>
+
+        <!-- Project Overview -->
+        <h2>About the Project</h2>
+        <p>
+            WhatsApp Analyzer is a powerful tool designed to help you understand your WhatsApp chat data better. 
+            Whether you're looking to analyze your personal conversations or gain insights into group chats, 
+            this tool provides a comprehensive analysis of your messaging patterns.
+        </p>
+        <p>
+            With WhatsApp Analyzer, you can:
+        </p>
+        <ul style="text-align: left; margin-left: 20px;">
+            <li>Track your most active days and times.</li>
+            <li>Identify your most frequently used words and emojis.</li>
+            <li>Visualize your chat activity with interactive graphs.</li>
+            <li>Analyze sentiment trends over time.</li>
+        </ul>
+
+        <!-- How It Works -->
+        <h2>How It Works</h2>
+        <p>
+            Using WhatsApp Analyzer is simple and straightforward. Follow these steps to get started:
+        </p>
+        <ol style="text-align: left; margin-left: 20px;">
+            <li><strong>Export Your Chat:</strong> Open WhatsApp, go to the chat you want to analyze, and export the chat without media.</li>
+            <li><strong>Upload the File:</strong> Click the "Get Started" button below and upload your exported chat file.</li>
+            <li><strong>Choose Device:</strong> Select The Format like Android and Ios.</li>
+            <li><strong>Analyze and Explore:</strong> Sit back and let WhatsApp Analyzer process your data. Explore the insights and visualizations!</li>
+        </ol>
+
+        <!-- Developer Information -->
+        <div class="developer-info">
+            <h2>About the Developers</h2>
+            <p>This project was developed by a passionate team of developers who love data and technology.</p>
+            <p>
+                <strong>Developers:</strong><br>
+                <a href="https://www.linkedin.com/in/nandini-nilla-1642512a3/" target="_blank">Nandini Nilla</a><br>
+                <a href="https://www.linkedin.com/in/mohan-reddy-padala-526716294" target="_blank">Mohan Reddy Padala</a>
+            </p>
+            <p>Contact us at: <a href="mailto:mohanreddy.padala12@gmail.com" style="color: #00bcd4;">MNprojects@whatsappanalyzer.com</a></p>
+        </div>
+
+        <!-- Get Started Button -->
+        <a href="{% url 'upload_chat' %}" class="btn">Get Started</a>
+    </div>
+
+    <footer>
+        &copy; 2025 WhatsApp Analyzer. All rights reserved.
+    </footer>
+</body>
+</html>
